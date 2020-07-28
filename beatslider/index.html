@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap" rel="stylesheet"> 
+    
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js"></script>
+    
+    <title>Beat Slider</title>
+
+
+</head>
+<body onload="">
+
+
+
+    <div class="main-container"> 
+        <div class="btn-container">
+
+            <!-- First flex child -->
+            <div class="start-container">
+                 <button onclick="start();" class="start"><span class="btn-span">Drop the beat</span></button>
+            </div>
+
+            <!-- Second flex child -->
+            <div class="size-container">
+                <input type="number" class="beat-selector" id="beat-selector" placeholder="..."></input>
+                <input type="number" class="set-selector" id="set-selector" placeholder="..."></input>
+            </div>
+
+            <!-- Third flex child -->
+            <div class="bpm-container">
+                <input type="number" class="bpm-btn" id="bpm-btn" placeholder="..."></input>
+            </div>
+        </div>
+
+
+
+        <div class="slider-container">
+
+            <div class="first-floor">
+                <div class="progress-bar-container" id="progress-bar-container">
+                    <div class="progress-bar" id="progress-bar"></div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+    
+</body>
+</html>

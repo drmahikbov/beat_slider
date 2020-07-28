@@ -1,0 +1,211 @@
+
+/* -- VARIABLES -- */
+
+:root {
+    --fefe: #fefefe;
+    --efef: #efefef;
+    --colorado: #f00;
+    --b-radius: 3px;
+    --success-btn: #dfdfdf;
+    --oceanblue: rgb(11, 59, 107);
+    --bordo: rgb(168, 60, 50);
+    --progress-bar-bgnd: #6d6b6b;
+    --placeholder-opacity: 0.7;
+}
+
+
+/* -- GENERAL RULES -- */
+
+body {
+    background-color: var(--fefe);
+}
+
+* {
+box-sizing: border-box;
+}
+
+/* -- APPLY TO EVERYTHING -- */
+
+.main-container {
+    width: 95%;
+    margin: 2.5%;
+    height: 700px;
+    background-color: var(--efef);
+    border-radius: var(--b-radius);
+}
+
+/* -- CONTAINER STYLES -- */
+
+.btn-container {
+    display: flex;
+    /* flex-flow: row nowrap; */
+    width: 100%;
+    height: 200px;
+    border: 2px solid rebeccapurple;
+    border-radius: var(--b-radius);
+}
+
+.btn-container div {
+    flex-grow: 1;
+    align-self: stretch;
+}
+
+.btn-container .start-container {
+    background-color: dodgerblue;
+    flex-grow: 1;
+}
+
+.btn-container .size-container {
+    background-color: rosybrown;
+    color: aliceblue;
+    font-family: 'Montserrat', sans-serif;
+    font-size: large;
+    font-weight: 700;
+}
+
+.btn-container .bpm-container{
+    background-color: aquamarine;
+}
+
+
+/* -- STYLE BTNS INDIVIDUALLY -- */
+
+
+/* -- START BUTTON -- */
+
+button.start {
+    width: 90%;
+    height: 50px;
+    margin: 5%;
+    border-radius: var(--b-radius);
+    background-color: var(--oceanblue);
+    opacity: 1;
+    border: none;
+    transition: transform 0.5s;
+}
+
+button.start:hover {
+    opacity: 0.9;
+    transform: scale(1.05);
+    transition: transform 0.5s;
+}
+
+button.start:active {
+    border: 1px solid black;
+}
+
+button > .btn-span {
+    color: var(--fefe);
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    font-size: 24px;
+}
+
+
+
+/* -- SIZE BUTTONS -- */
+
+input.beat-selector {
+    width: 70px;
+    height: 70px;
+    border-radius: var(--b-radius);
+    margin: 5%;
+    background-color: var(--bordo);
+    opacity: 1;
+    border: none;
+    transition: transform 0.5s;
+}
+
+input.set-selector {
+    width: 70px;
+    height: 70px;
+    border-radius: var(--b-radius);
+    background-color: var(--bordo);
+    opacity: 1;
+    border: none;
+    transition: transform 0.5s;
+}
+
+input.beat-selector:hover {
+    opacity: 0.9;
+    transform: scale(1.05);
+    transition: transform 0.5s;
+}
+
+input.beat-selector:active {
+    border: 1px solid black;
+}
+
+input.set-selector:hover {
+    opacity: 0.9;
+    transform: scale(1.05);
+    transition: transform 0.5s;
+}
+
+input.set-selector:active {
+    border: 1px solid black;
+}
+
+input[type="number" i] {
+    color: var(--efef);
+    font-size: 40px;
+    text-align: center;
+} 
+
+
+
+/* -- BPM BUTTON STYLES */
+
+input.bpm-btn {
+    width: 90%;
+    height: 50px;
+    margin: 5%;
+    border-radius: var(--b-radius);
+    background-color: var(--oceanblue);
+    opacity: 1;
+    border: none;
+    transition: transform 0.5s;
+}
+
+/* -- PLACEHOLDER STYLES -- */
+
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    color: var(--efef);
+    opacity: var(--placeholder-opacity);
+  }
+  ::-moz-placeholder { /* Firefox 19+ */
+    color: var(--efef);
+    opacity: var(--placeholder-opacity);
+  }
+  :-ms-input-placeholder { /* IE 10+ */
+    color: var(--efef);
+    opacity: var(--placeholder-opacity);
+  }
+  :-moz-placeholder { /* Firefox 18- */
+    color: var(--efef);
+    opacity: var(--placeholder-opacity);
+  }
+
+
+  /* -- SLIDER STYLES -- */
+
+  div.first-floor {
+      width: 100%;
+      height: 200px;
+      border: 2px solid purple;
+      border-radius: var(--b-radius);
+      /* background-color: blue; */
+  }
+
+  div.progress-bar-container {
+      width: 90%;
+      height: 20px;
+      margin: 5%;
+      background-color: var(--progress-bar-bgnd);
+  }
+
+  div.progress-bar {
+      width: 1%;
+      height: 100%;
+      background-color: green;
+  }
