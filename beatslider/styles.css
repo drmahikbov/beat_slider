@@ -10,7 +10,10 @@
     --oceanblue: rgb(11, 59, 107);
     --bordo: rgb(168, 60, 50);
     --progress-bar-bgnd: #6d6b6b;
+    --progress-bar-measures: black;
+    --progress-bar-color: rgb(7, 194, 7);
     --placeholder-opacity: 0.7;
+    --rebeccapurple: transparent;
 }
 
 
@@ -32,6 +35,8 @@ box-sizing: border-box;
     height: 700px;
     background-color: var(--efef);
     border-radius: var(--b-radius);
+    position: relative;
+    box-shadow: 0 0 50px 2px;
 }
 
 /* -- CONTAINER STYLES -- */
@@ -41,32 +46,48 @@ box-sizing: border-box;
     /* flex-flow: row nowrap; */
     width: 100%;
     height: 200px;
-    border: 2px solid rebeccapurple;
+    /* border: 2px solid var(--rebeccapurple); */
     border-radius: var(--b-radius);
+    font-family: 'Montserrat', sans-serif;
 }
 
 .btn-container div {
     flex-grow: 1;
+    flex-basis: 0;
     align-self: stretch;
 }
 
 .btn-container .start-container {
-    background-color: dodgerblue;
+    background-color: var(--efef);
     flex-grow: 1;
+    display: flex;
+    align-items: center;
+    border-top-left-radius: var(--b-radius);    
+    border-bottom-left-radius: var(--b-radius);
 }
 
 .btn-container .size-container {
-    background-color: rosybrown;
+    background-color: var(--efef);
     color: aliceblue;
     font-family: 'Montserrat', sans-serif;
     font-size: large;
     font-weight: 700;
+    /* border-radius: var(--b-radius); */
+
 }
 
 .btn-container .bpm-container{
-    background-color: aquamarine;
+    background-color: var(--efef);
+    border-radius: var(--b-radius);
+    display: flex;
+    align-items: center;
 }
 
+.size-container {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
 
 /* -- STYLE BTNS INDIVIDUALLY -- */
 
@@ -109,8 +130,8 @@ input.beat-selector {
     width: 70px;
     height: 70px;
     border-radius: var(--b-radius);
-    margin: 5%;
-    background-color: var(--bordo);
+    /* margin: 5%; */
+    background-color: var(--oceanblue);
     opacity: 1;
     border: none;
     transition: transform 0.5s;
@@ -120,10 +141,22 @@ input.set-selector {
     width: 70px;
     height: 70px;
     border-radius: var(--b-radius);
-    background-color: var(--bordo);
+    background-color: var(--oceanblue);
     opacity: 1;
     border: none;
     transition: transform 0.5s;
+}
+
+button.set-measures {
+    width: 100px;
+    height: 30px;
+    border-radius: 50px;
+    background-color: var(--fefe);
+    opacity: 1;
+    border: none;
+    transition: transform 0.5s;
+    font-family: inherit;
+    line-height: 13px;
 }
 
 input.beat-selector:hover {
@@ -146,10 +179,21 @@ input.set-selector:active {
     border: 1px solid black;
 }
 
+button.set-measures:hover {
+    opacity: 0.9;
+    transform: scale(1.05);
+    transition: transform 0.5s;
+}
+
+button.set-measures:active {
+    border: 1px solid black;
+}
+
 input[type="number" i] {
     color: var(--efef);
-    font-size: 40px;
-    text-align: center;
+    font-size: 36px;
+    text-align: left;
+    font-family: inherit;
 } 
 
 
@@ -172,27 +216,36 @@ input.bpm-btn {
 ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
     color: var(--efef);
     opacity: var(--placeholder-opacity);
+    font-size: 12px;
   }
   ::-moz-placeholder { /* Firefox 19+ */
     color: var(--efef);
     opacity: var(--placeholder-opacity);
+    font-size: 12px;
   }
   :-ms-input-placeholder { /* IE 10+ */
     color: var(--efef);
     opacity: var(--placeholder-opacity);
+    font-size: 12px;
   }
   :-moz-placeholder { /* Firefox 18- */
     color: var(--efef);
     opacity: var(--placeholder-opacity);
+    font-size: 12px;
   }
 
 
   /* -- SLIDER STYLES -- */
 
+  div.slider-container {
+      display: flex;
+      align-items: center;
+  }
+
   div.first-floor {
       width: 100%;
       height: 200px;
-      border: 2px solid purple;
+      border: 2px solid var(--rebeccapurple);
       border-radius: var(--b-radius);
       /* background-color: blue; */
   }
@@ -207,5 +260,57 @@ input.bpm-btn {
   div.progress-bar {
       width: 1%;
       height: 100%;
-      background-color: green;
+      background-color: var(--progress-bar-measures);
+      opacity: 0.7;
+      display: flex;
+  }
+
+  div.bar {
+    width: 0%;
+    height: 100%;
+    background-color: var(--oceanblue);
+    opacity: 0.7;
+    display: flex;
+}
+
+  /* -- MEASURES -- */
+  div.measures-container {
+        width: 90%;
+        height: 200px;
+        margin: 0 5%;
+        background-color: var(--progress-bar-bgnd);
+        display: flex;
+  }
+
+
+  /* -- MOBILE --  */
+
+  @media only screen and (max-width: 700px) {
+    body {
+      background-color: lightblue;
+    }
+
+    .btn-container {
+        display: flex;
+        /* flex-flow: row nowrap; */
+        flex-direction: row;
+        width: 100%;
+        /* border: 2px solid var(--rebeccapurple); */
+        border-radius: var(--b-radius);
+        font-family: 'Montserrat', sans-serif;
+    }
+
+    button > .btn-span {
+        color: var(--fefe);
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 300;
+        font-size: 12px !important;
+    }
+    
+    .btn-container div {
+        flex-grow: 1;
+        flex-basis: 0;
+        align-self: stretch;
+    }
+
   }
